@@ -4,7 +4,7 @@ pipeline{
         stage("Create Virtual Environment"){
             steps{
                 bat 'echo %PATH%'
-                cmd python -m venv venv
+                cmd.exe /C python -m venv venv
             }
             post{
                 always{
@@ -20,7 +20,7 @@ pipeline{
         }
         stage("Activate Virtual Envrionment"){
             steps{
-                cmd /venv/Scripts/activate
+                cmd.exe /C /venv/Scripts/activate
             }
             post{
                 always{
@@ -36,7 +36,7 @@ pipeline{
         }
         stage("Activate Virtual Envrionment"){
             steps{
-                cmd pip install -r requirements.txt
+                cmd.exe /C pip install -r requirements.txt
             }
             post{
                 always{
