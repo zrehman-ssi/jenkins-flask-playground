@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage("Create Virtual Environment"){
             steps{
+                bat 'echo %PATH%'
                 cmd python -m venv venv
             }
             post{
