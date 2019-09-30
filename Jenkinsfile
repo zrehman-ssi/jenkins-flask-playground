@@ -33,7 +33,7 @@ pipeline{
                 }
             }
         }
-        stage("Activate Virtual Envrionment"){
+        stage("Install Dependencies Envrionment"){
             steps{
                 sh "pip3.7 install -r requirements.txt"
             }
