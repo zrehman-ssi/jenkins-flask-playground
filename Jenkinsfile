@@ -20,7 +20,7 @@ pipeline{
         stage("Install Dependencies Envrionment"){
             steps{
                 sh "venv/bin/pip3.7 install -r requirements.txt"
-                sh "python3.7 manage.py"
+                sh "venv/bin/python3.7 manage.py"
             }
             post{
                 always{
