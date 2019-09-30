@@ -17,25 +17,9 @@ pipeline{
                 }
             }
         }
-        stage("Activate Virtual Envrionment"){
-            steps{
-                sh "source venv/bin/activate"
-            }
-            post{
-                always{
-                    echo "Activation of virtual envrionment completed"
-                }
-                success{
-                    echo "Activated virtual envrionment"
-                }
-                failure{
-                    echo "Fialed to activate virtual envrionment"
-                }
-            }
-        }
         stage("Install Dependencies Envrionment"){
             steps{
-                sh "pip3.7 install -r requirements.txt"
+                sh "venv/bin/pip3.7 install -r requirements.txt"
             }
             post{
                 always{
