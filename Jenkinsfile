@@ -1,19 +1,51 @@
 pipeline{
     agent any
     stages{
-        stage("Testing Stage A"){
+        stage("Create Virtual Environment"){
             steps{
-                echo "========executing A========"
+                py -m venv venv
             }
             post{
                 always{
-                    echo "========always========"
+                    echo "Virtual environment step competed"
                 }
                 success{
-                    echo "========A executed successfully========"
+                    echo "Virtual environment created"
                 }
                 failure{
-                    echo "========A execution failed========"
+                    echo "Virtual environment failed"
+                }
+            }
+        }
+        stage("Activate Virtual Envrionment"){
+            steps{
+                /venv/Scripts/activate
+            }
+            post{
+                always{
+                    echo "Activation of virtual envrionment completed"
+                }
+                success{
+                    echo "Activated virtual envrionment"
+                }
+                failure{
+                    echo "Fialed to activate virtual envrionment"
+                }
+            }
+        }
+        stage("Activate Virtual Envrionment"){
+            steps{
+                pip install -r requirements.txt
+            }
+            post{
+                always{
+                    echo "Requirements installation completed"
+                }
+                success{
+                    echo "Requirements installed successfully."
+                }
+                failure{
+                    echo "Fialed to install requirements from requirements.txt"
                 }
             }
         }
