@@ -19,7 +19,7 @@ pipeline{
         }
         stage("Activate Virtual Envrionment"){
             steps{
-                sh "source /venv/bin/activate"
+                sh "source venv/bin/activate"
             }
             post{
                 always{
