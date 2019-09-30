@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("Stage A"){
+        stage("Testing Stage A"){
             steps{
                 echo "========executing A========"
             }
