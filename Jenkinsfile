@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Create Virtual Environment"){
             steps{
-                py -m venv venv
+                python -m venv venv
             }
             post{
                 always{
