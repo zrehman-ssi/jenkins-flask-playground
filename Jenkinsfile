@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Create Virtual Environment"){
             steps{
-                python -m venv venv
+                cmd python -m venv venv
             }
             post{
                 always{
@@ -19,7 +19,7 @@ pipeline{
         }
         stage("Activate Virtual Envrionment"){
             steps{
-                /venv/Scripts/activate
+                cmd /venv/Scripts/activate
             }
             post{
                 always{
@@ -35,7 +35,7 @@ pipeline{
         }
         stage("Activate Virtual Envrionment"){
             steps{
-                pip install -r requirements.txt
+                cmd pip install -r requirements.txt
             }
             post{
                 always{
