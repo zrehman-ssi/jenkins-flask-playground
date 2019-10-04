@@ -8,7 +8,8 @@ pipeline{
         stage("Create Virtual Environment"){
             steps{
                 sh "python3.7 -m venv venv"
-				sh "python3.7 --version"
+				sh "pwd"
+				sh "ls -la"
 				sh "venv/bin/activate/pip3.7 install -r requirements.txt"
 				
             }
