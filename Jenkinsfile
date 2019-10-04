@@ -10,7 +10,7 @@ pipeline{
                 sh "python3.7 -m venv venv"
 				sh "pwd"
 				sh "ls -la"
-				sh "venv/bin/activate/pip3.7 install -r requirements.txt"
+				sh "venv/bin/pip3.7 install -r requirements.txt"
 				
             }
             post{
@@ -27,8 +27,8 @@ pipeline{
         }
         stage("Install Dependencies Envrionment"){
             steps{
-                sh "venv/bin/activate/pip3.7 install -r requirements.txt"
-                sh "venv/bin/activate/python3.7 -m compileall -f ."
+                sh "venv/bin/pip3.7 install -r requirements.txt"
+                sh "venv/bin/python3.7 -m compileall -f ."
             }
             post{
                 always{
