@@ -1,6 +1,7 @@
 pipeline{
     agent any
     stages{
+		agent { docker { image 'python:3.7.4' } }
         stage("Create Virtual Environment"){
             steps{
                 sh "python3.7 -m venv venv"
