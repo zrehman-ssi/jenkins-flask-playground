@@ -8,7 +8,6 @@ pipeline{
         stage("Create Virtual Environment"){
             steps{
                 sh "python3.7 -m venv venv"
-				sh "source venv/bin/activate"
             }
             post{
                 always{
@@ -24,8 +23,8 @@ pipeline{
         }
         stage("Install Dependencies Envrionment"){
             steps{
-                sh "pip3.7 install -r requirements.txt"
-                sh "python3.7 -m compileall -f ."
+                sh "venv/bin/activate/pip3.7 install -r requirements.txt"
+                sh "venv/bin/activate/python3.7 -m compileall -f ."
             }
             post{
                 always{
