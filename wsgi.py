@@ -3,5 +3,4 @@ from app.blueprints import blueprint
 
 application.register_blueprint(blueprint)
 
-if __name__ == "__main__":
-    application.run(debug=True)
+application.run(debug=True)

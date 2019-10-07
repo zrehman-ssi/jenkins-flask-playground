@@ -8,7 +8,6 @@ pipeline{
         stage("Create Virtual Environment"){
             steps{
                 sh "python3.7 -m venv venv"
-				
             }
             post{
                 always{
@@ -26,6 +25,7 @@ pipeline{
             steps{
                 sh "venv/bin/pip3.7 install -r requirements.txt"
                 sh "venv/bin/python3.7 -m compileall -f ."
+                sh "venv/bin/uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app"
             }
             post{
                 always{
